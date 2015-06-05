@@ -1,0 +1,11 @@
+source: "app"
+destination: "dist"
+prose:
+  rooturl: 'app'
+  ignore:
+    - 'robots.txt'
+    - 'favicon.ico'
+    - '_includes'
+    - '_layouts'
+    - 'scripts'
+    - 'styles'
