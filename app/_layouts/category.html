@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+    <section class="container related">
+        <ul>
+        {% for range in site.data.ranges %}
+        {% if range.category == page.category %}
+          <li>
+            <a href="/range/{{ range.category }}/{{ range.code }}.html">
+              {{ range.range }}
+            </a>
+          </li>
+        {% endif %}
+        {% endfor %}
+        </ul>
+    </section>

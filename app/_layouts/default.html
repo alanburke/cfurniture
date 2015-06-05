@@ -1,0 +1,77 @@
+{% include head.html %}
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <a class="" href="/">
+          <img alt="Craughwell Furniture" src="/media/images/logo.jpg" class="img-responsive">
+        </a>
+      </div>
+      <div class="col-md-3">
+        <p class="phone lead ">
+          <span class="text-primary glyphicon glyphicon-phone-alt" aria-hidden="true"></span>
+          <small>091</small> 846056
+        </p>
+      </div>
+      <div class="col-md-3">
+        <p class="opening">
+          <span class="text-primary glyphicon glyphicon-time" aria-hidden="true"></span>
+          <strong>Opening Hours</strong>
+        </p>
+        <ul class="opening list-unstyled">
+          <li>Tues - Sat 10:30am to 6pm</li>
+          <li>Sun 2pm to 6pm</li>
+          <li class="text-warning">Closed Monday</li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <ul class="list-inline secondary-links">
+          <li role="presentation" class=""><a href="/index.html#about">About</a></li>
+          <li role="presentation"><a href="/index.html#location">Location</a></li>
+          <li role="presentation"><a href="mailto:info@cfurniture.ie?subject=Website Enquiry&body=Hi, I came here from your website">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+    <div class="container">
+    <nav class="navbar navbar-default">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+       <a class="navbar-brand" href="/">
+          <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+      </a>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="/sofas">Sofas</a></li>
+        <li><a href="/bedroom">Bedroom</a></li>
+        <li><a href="/dining">Dining</a></li>
+        <li><a href="/living">Living</a></li>
+        <li><a href="/matresses">Matresses</a></li>
+        <li><a href="/flooring">Flooring</a></li>
+        <li class="active"><a href="/specials">Specials</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-->
+    </nav>
+    </div><!-- /.container-->
+
+    {{ content }}
+
+    <div class="container">
+      <p><small>&copy; Craughwell Furniture {{ site.time | date: '%Y' }}</small></p>
+    </div>
+    {% include footer.html %}
+  </div>
+</body>
+</html>

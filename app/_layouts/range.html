@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+    <section class="container">
+      <h1>{{ page.title }}</h1>
+      <figure>
+        <img src="/media/images/ranges/{{ page.image }}">
+      </figure>
+      {% if page.title %} <p class="description"> {{ page.desc }} </p>  {% endif %}
+      {% if page.tagline %} <p class="tagline"> {{ page.tagline }} </p>  {% endif %}
+      {% if page.options %} <p class="options"> {{ page.options }} </p> {% endif %}
+    </section>
+
+    <section class="info container" id="general">
+      {{ content }}
+    </section>
+
+    <section class="container related">
+      <h2>Items in this collection</h2>
+        <ul>
+        {% for product in site.data.products %}
+        {% if product.range == page.code %}
+          <li>
+            <a href="/product/{{ product.code }}.html">
+              {{ product.name }}
+            </a>
+          </li>
+        {% endif %}
+        {% endfor %}
+        </ul>
+    </section>
