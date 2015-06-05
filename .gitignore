@@ -1,6 +1,8 @@
 temp
 node_modules
 app/css
+app/_data/ranges.csv
+app/_data/products.csv
 dev
 Gemfile.lock
 .env
