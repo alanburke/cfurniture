@@ -39,13 +39,13 @@ IFS="|"
 while read code name desc tagline image image2 image3 range RRP displayRRP Unit displayUnit Sale displaySale Special pricingNote
 do
   DESTFILE=app/_posts/products/0001-01-01-$code.md
-  SOURCEPATH=https://dl.dropboxusercontent.com/u/8703195/www.cfurniture.ie/media/images/products
+  SOURCEPATH=https://dl.dropboxusercontent.com/u/8703195/www.cfurniture.ie/media/images
   SOURCEIMAGE1=$SOURCEPATH/$image
   SOURCEIMAGE2=$SOURCEPATH/$image2
   SOURCEIMAGE3=$SOURCEPATH/$image3
-  wget $SOURCEIMAGE1 -O app/media/images/ranges/$image
-  wget $SOURCEIMAGE2 -O app/media/images/ranges/$image2
-  wget $SOURCEIMAGE3 -O app/media/images/ranges/$image3
+  wget $SOURCEIMAGE1 -O app/media/images/products/$image
+  wget $SOURCEIMAGE2 -O app/media/images/products/$image2
+  wget $SOURCEIMAGE3 -O app/media/images/products/$image3
   echo "---" > $DESTFILE
   echo "layout: product" >> $DESTFILE
   echo "code : $code" >> $DESTFILE
