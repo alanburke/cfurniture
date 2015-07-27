@@ -2,6 +2,13 @@
 layout: default
 ---
 
+{% for range in site.data.ranges %}
+  {% if range.code == page.range %}
+    {% assign rangeName = range.range %}
+    {% assign rangeCategory = range.category %}
+  {% endif %}
+{% endfor %}
+
 <div class="container">
     <div class="row">
       <div class="col-md-6">
