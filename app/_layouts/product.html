@@ -68,16 +68,17 @@ layout: default
       </div>
     </div>
 
-      <h2>Items in this collection</h2>
-      <div class="row">
+      <h4>Items in this collection</h4>
+      <div class="row related-items">
         {% for product in site.data.products %}
-        {% if product.range == page.range %}
-        <div class="col-xs-6 col-md-3">
-            <a href="/product/{{ product.code }}.html" class="thumbnail">
-              {{ product.name | capitalize }}
-            </a>
-        </div>
-        {% endif %}
+          {% if product.range == page.range %}
+          <div class="col-xs-6 col-md-3">
+              <a href="/product/{{ product.code }}.html" class="thumbnail">
+                <img class="img-responsive" src="/media/images/products/{{ product.image }}">
+                {{ product.name | capitalize }}
+              </a>
+          </div>
+          {% endif %}
         {% endfor %}
       </div>
 </div>
