@@ -50,6 +50,20 @@ layout: default
         {% if page.desc %} <p class="description lead text-capitalize"> {{ page.desc | capitalize }} </p>  {% endif %}
         {% if page.tagline %} <p class="tagline"> {{ page.tagline }} </p>  {% endif %}
         {% if page.pricingNote %} <p class="pricingNote well well-sm"> {{ page.pricingNote }} </p> {% endif %}
+
+        {% if page.displayRRP  == 'y' %}
+          {% if page.displayUnit  == 'y' %} <strike>{% endif %}
+          <p class="bg-info  price-info price-rrp"> RRP: € {{ page.RRP}} </p>
+          {% if page.displayUnit  == 'y' %} </strike>{% endif %}
+        {% endif %}
+        {% if page.displayUnit  == 'y' %}
+          {% if page.displaySale  == 'y' %} <strike>{% endif %}
+          <p class="bg-primary price-info price-unit"> Our Price: € {{ page.Unit}} </p>
+          {% if page.displaySale  == 'y' %} </strike>{% endif %}
+        {% endif %}
+        {% if page.displaySale  == 'y' %}
+          <p class="bg-warning lead price-info price-sale"> Sale price: <span class="glyphicon glyphicon-eur" aria-hidden="true"></span> {{ page.Sale}} </p>
+        {% endif %}
         {{ content }}
       </div>
     </div>
