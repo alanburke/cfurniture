@@ -16,15 +16,16 @@ do
   wget $SOURCESPECSHEET -O app/media/specsheets/$specsheet
   echo "---" > $DESTFILE
   echo "layout: range" >> $DESTFILE
-  echo "code : $code" >> $DESTFILE
-  echo "permalink : range/$category/$code.html" >> $DESTFILE
-  echo "range : $range" >> $DESTFILE
-  echo "desc : $desc" >> $DESTFILE
-  echo "options : $options" >> $DESTFILE
-  echo "tagline : $tagline" >> $DESTFILE
-  echo "image : $image" >> $DESTFILE
-  echo "category : $category" >> $DESTFILE
-  echo "specsheet : $specsheet" >> $DESTFILE
+  echo "title: $range" >> $DESTFILE
+  echo "code: $code" >> $DESTFILE
+  echo "permalink: $category/$code.html" >> $DESTFILE
+  echo "range: $range" >> $DESTFILE
+  echo "desc: $desc" >> $DESTFILE
+  echo "options: $options" >> $DESTFILE
+  echo "tagline: $tagline" >> $DESTFILE
+  echo "image: $image" >> $DESTFILE
+  echo "category: $category" >> $DESTFILE
+  echo "specsheet: $specsheet" >> $DESTFILE
   echo "---" >> $DESTFILE
 done < $INPUT
 IFS=$OLDIFS
