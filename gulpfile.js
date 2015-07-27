@@ -82,7 +82,7 @@ gulp.task("jekyll:rebuild", ["jekyll:dev"], function () {
 gulp.task('watch', function() {
 
   // Watch .scss files
-  gulp.watch('app/sass/**/*.scss', ['styles:dev']);
+  gulp.watch(['app/sass/**/*.scss', 'app/images/**/*'], ['styles:dev']);
 
   // Watch Jekyll files
   gulp.watch(['app/**/*.md', 'app/**/*.html', 'app/**/*.yml', 'app/**/*.txt', 'app/**/*.js', 'app/**/*.geosjon'], ['jekyll:rebuild']);
