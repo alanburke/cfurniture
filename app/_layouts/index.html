@@ -1,7 +1,46 @@
 ---
 layout: default
 ---
+    <section class="container">
+      <div class="jumbotron-wrapper" style="background-image: url('/images/categories/{{ page.image }}')";>
+      <div class="jumbotron">
+        <h1>{{ page.title }}</h1>
+        <p>{{ page.description}}</p>
+      </div>
+      </div>
+    </section>
 
-    <section class="container map" id="location">
+    <section class="container categories">
+      <div class="col-xs-6 col-md-3">
+          <a href="/sofas" class="thumbnail">
+            <img class="img-responsive" src="/images/categories/thumbs/sofas.jpg">
+            Sofas
+          </a>
+      </div>
+      <div class="col-xs-6 col-md-3">
+          <a href="/bedroom" class="thumbnail">
+            <img class="img-responsive" src="/images/categories/thumbs/bedroom.jpg">
+            Bedroom
+          </a>
+      </div>
+      <div class="col-xs-6 col-md-3">
+          <a href="/dining" class="thumbnail">
+            <img class="img-responsive" src="/images/categories/thumbs/dining.jpg">
+            Dining
+          </a>
+      </div>
+      <div class="col-xs-6 col-md-3">
+          <a href="/living" class="thumbnail">
+            <img class="img-responsive" src="/images/categories/thumbs/living.jpg">
+            Living
+          </a>
+      </div>
+    </section>
+
+    <section class="container home-about" id="about">
+      {{ content }}
+    </section>
+
+    <section class="container home-map" id="location">
 <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2388.5131556311208!2d-8.730428999999999!3d53.226577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485b8615f2c1ed67%3A0x8e4555a7619f17e4!2sCraughwell+Furniture!5e0!3m2!1sen!2sie!4v1433496433692&z=5;" width="100%" height="450" frameborder="0" style="border:0"></iframe>
     </section>
