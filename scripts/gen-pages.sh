@@ -10,7 +10,7 @@ IFS="|"
 while read code range desc options tagline image category specsheet
 do
   DESTFILE=app/_posts/ranges/0001-01-01-$code.md
-  SOURCEIMAGE=https://dl.dropboxusercontent.com/u/8703195/www.cfurniture.ie/media/images/ranges/$image
+  SOURCEIMAGE=https://dl.dropboxusercontent.com/u/8703195/www.cfurniture.ie/media/images/$image
   wget $SOURCEIMAGE -O app/media/images/ranges/$image
   echo "---" > $DESTFILE
   echo "layout: range" >> $DESTFILE
