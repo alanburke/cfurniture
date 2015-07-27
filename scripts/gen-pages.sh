@@ -49,6 +49,7 @@ do
   echo "---" > $DESTFILE
   echo "layout: product" >> $DESTFILE
   echo "code : $code" >> $DESTFILE
+  echo "title: $name" >> $DESTFILE
   echo "name: $name" >> $DESTFILE
   echo "permalink : product/$code.html" >> $DESTFILE
   echo "desc : $desc" >> $DESTFILE
