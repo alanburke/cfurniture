@@ -12,6 +12,8 @@ do
   DESTFILE=app/_posts/ranges/0001-01-01-$code.md
   SOURCEIMAGE=https://dl.dropboxusercontent.com/u/8703195/www.cfurniture.ie/media/images/$image
   wget $SOURCEIMAGE -O app/media/images/ranges/$image
+  SOURCESPECSHEET=https://dl.dropboxusercontent.com/u/8703195/www.cfurniture.ie/media/pdfs/$specsheet
+  wget $SOURCESPECSHEET -O app/media/specsheets/$specsheet
   echo "---" > $DESTFILE
   echo "layout: range" >> $DESTFILE
   echo "code : $code" >> $DESTFILE
