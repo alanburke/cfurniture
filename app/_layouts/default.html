@@ -3,34 +3,28 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-md-3">
-        <a class="" href="/">
+      <div class="col-md-4">
+        <a class="logo" href="/">
           <img alt="Craughwell Furniture" src="/media/images/logo.jpg" class="img-responsive">
         </a>
       </div>
-      <div class="col-md-3">
-        <p class="phone lead ">
-          <span class="text-primary glyphicon glyphicon-phone-alt" aria-hidden="true"></span>
-          <small>091</small> 846056
-        </p>
-      </div>
-      <div class="col-md-3">
-        <p class="opening">
+      <div class="col-xs-7 col-md-3">
+        <p class="opening lead">
           <span class="text-primary glyphicon glyphicon-time" aria-hidden="true"></span>
           <strong>Opening Hours</strong>
         </p>
         <ul class="opening list-unstyled">
           <li>Tues - Sat 10:30am to 6pm</li>
           <li>Sun 2pm to 6pm</li>
-          <li class="text-warning">Closed Monday</li>
+          <li class="text-info">Closed Monday</li>
         </ul>
       </div>
-      <div class="col-md-3">
-        <ul class="list-inline secondary-links">
-          <li role="presentation" class=""><a href="/index.html#about">About</a></li>
-          <li role="presentation"><a href="/index.html#location">Location</a></li>
-          <li role="presentation"><a href="mailto:info@cfurniture.ie?subject=Website Enquiry&body=Hi, I came here from your website">Contact</a></li>
-        </ul>
+      <div class="col-xs-5 col-md-4">
+        <p class="phone lead ">
+          <span class="text-primary glyphicon glyphicon-phone-alt" aria-hidden="true"></span>
+          <strong>Phone</strong> <br />
+          <small>091</small> 846056
+        </p>
       </div>
     </div>
   </div>
@@ -69,6 +63,13 @@
     {{ content }}
 
     <div class="container">
+      <div class="row">
+        <ul class="list-inline secondary-links col-md-12">
+          <li role="presentation" class=""><a href="/index.html#about">About</a></li>
+          <li role="presentation"><a href="/index.html#location">Location</a></li>
+          <li role="presentation"><a href="mailto:info@cfurniture.ie?subject=Website Enquiry&body=Hi, I came here from your website. %0D%0AI was on this page: www.cfurniture.ie/{{ page.permalink}} ">Contact</a></li>
+        </ul>
+      </div>
       <p><small>&copy; Craughwell Furniture {{ site.time | date: '%Y' }}</small></p>
     </div>
     {% include footer.html %}
