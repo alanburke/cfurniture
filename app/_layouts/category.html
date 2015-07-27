@@ -11,15 +11,14 @@ layout: default
     </section>
 
     <section class="container related">
-        <ul>
-        {% for range in site.data.ranges %}
+      {% for range in site.data.ranges %}
         {% if range.category == page.category %}
-          <li>
-            <a href="/range/{{ range.category }}/{{ range.code }}.html">
-              {{ range.range }}
-            </a>
-          </li>
+          <div class="col-xs-6 col-md-3">
+              <a href="/{{ range.category }}/{{ range.code }}.html" class="thumbnail">
+                <img class="img-responsive" src="/media/images/ranges/{{ range.image }}">
+                {{ range.range | capitalize }}
+              </a>
+          </div>
         {% endif %}
-        {% endfor %}
-        </ul>
+      {% endfor %}
     </section>
