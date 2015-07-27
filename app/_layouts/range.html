@@ -2,31 +2,42 @@
 layout: default
 ---
 
-    <section class="container">
-      <h1>{{ page.title }}</h1>
-      <figure>
-        <img src="/media/images/ranges/{{ page.image }}">
-      </figure>
-      {% if page.title %} <p class="description"> {{ page.desc }} </p>  {% endif %}
-      {% if page.tagline %} <p class="tagline"> {{ page.tagline }} </p>  {% endif %}
-      {% if page.options %} <p class="options"> {{ page.options }} </p> {% endif %}
-    </section>
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li><a href="/">Home</a></li>
+          <li><a href="/{{ page.category }}">{{ page.category }}</a></li>
+          <li class="active">{{ page.range }}</li>
+        </ol>
+      </div>
+      <div class="col-md-6">
+        <figure class="well">
+          <img class="img-responsive img-rounded" src="/media/images/ranges/{{ page.image }}">
+        </figure>
+      </div>
+      <div class="col-md-6">
+        <h1 class="text-capitalize">{{ page.range | capitalize }}</h1>
+        {% if page.desc %} <p class="description lead text-capitalize"> {{ page.desc | capitalize }} </p>  {% endif %}
+        {% if page.tagline %} <p class="tagline"> {{ page.tagline }} </p>  {% endif %}
+        {% if page.specsheet %} <p class="specsheet"> <a class="btn btn-default" href="/media/specsheets/{{ page.specsheet }}">Download Brochure</a> </p>  {% endif %}
+        {% if page.options%} <p class="pricingNote well well-sm"> {{ page.options }} </p> {% endif %}
 
-    <section class="info container" id="general">
-      {{ content }}
-    </section>
+        {{ content }}
+      </div>
+    </div>
 
-    <section class="container related">
-      <h2>Items in this collection</h2>
-        <ul>
+      <h4>Items in this collection</h4>
+      <div class="row related-items">
         {% for product in site.data.products %}
-        {% if product.range == page.code %}
-          <li>
-            <a href="/product/{{ product.code }}.html">
-              {{ product.name }}
-            </a>
-          </li>
-        {% endif %}
+          {% if product.range == page.code %}
+          <div class="col-xs-6 col-md-3">
+              <a href="/product/{{ product.code }}.html" class="thumbnail">
+                <img class="img-responsive" src="/media/images/products/{{ product.image }}">
+                {{ product.name | capitalize }}
+              </a>
+          </div>
+          {% endif %}
         {% endfor %}
-        </ul>
-    </section>
+      </div>
+</div>
