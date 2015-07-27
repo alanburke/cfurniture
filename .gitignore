@@ -3,6 +3,11 @@ node_modules
 app/css
 app/_data/ranges.csv
 app/_data/products.csv
+app/_posts/products
+app/_posts/ranges
+app/media/images/ranges
+app/media/images/products
+app/media/specsheets
 dev
 Gemfile.lock
 .env
