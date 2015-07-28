@@ -25,7 +25,8 @@
     "gulp-uncss": "^1.0.0"
   },
   "scripts": {
-    "pretest": "gulp jekyll && gulp critical && gulp revreplace",
+    "generate": "./scripts/get-sources.sh && ./scripts/get-sources.sh",
+    "build": "gulp jekyll && gulp styles && gulp revreplace",
     "start": "gulp"
   }
 }
