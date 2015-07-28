@@ -10,6 +10,7 @@ general:
 
 dependencies:
   post:
+    - bower install
     - npm run generate
     - npm run build
 
