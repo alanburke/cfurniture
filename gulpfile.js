@@ -108,7 +108,7 @@ gulp.task("serve:dev", ["styles:dev", "jekyll:rebuild"], function () {
 gulp.task('revision', function () {
     // by default, gulp would pick `assets/css` as the base,
     // so we need to set it explicitly:
-    return gulp.src(['dist/css/*.css', 'dist/scripts/*.js'], {base: 'dist'})
+    return gulp.src(['dist/css/*.css', 'dist/js/*.js'], {base: 'dist'})
         .pipe(gulp.dest('dist'))
         .pipe(rev())
         .pipe(gulp.dest('dist'))
@@ -119,7 +119,7 @@ gulp.task('revision', function () {
 gulp.task("revreplace", ["revision"],  function(){
   var manifest = gulp.src("dist/rev-manifest.json");
 
-  return gulp.src("dist" + "/*.html")
+  return gulp.src("dist" + "/**/*.html")
     .pipe(revreplace({manifest: manifest}))
     .pipe(gulp.dest("dist"));
 });
