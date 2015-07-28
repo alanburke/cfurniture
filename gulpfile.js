@@ -124,6 +124,6 @@ gulp.task("revreplace", ["revision"],  function(){
     .pipe(gulp.dest("dist"));
 });
 
-gulp.task('build', ['sass', 'jekyll']);
+gulp.task('build', ['styles', 'jekyll']);
 
 gulp.task("default", ["serve:dev", "watch"]);
