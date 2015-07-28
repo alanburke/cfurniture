@@ -31,12 +31,9 @@ gulp.task('styles', function() {
       includePaths: [config.bootstrapDir + '/assets/stylesheets'],
      }))
     .pipe(autoprefixer({browsers: ['last 2 versions', 'ie 8', 'ie 9']}))
-    .pipe(uncss({
-        html: ['dist/*.html'], ignore: [ '.container.hidden']
-    }))
+//    .pipe(uncss({html: ['dist/**/*.html'], ignoreSheets: [ 'colorbox.css'] }))
     .pipe(minifycss())
-    .pipe(gulp.dest('dist/css'))
-    .pipe(notify({ message: 'Styles task complete' }));
+    .pipe(gulp.dest('dist/css'));
 });
 
 gulp.task('copystyles', function () {
