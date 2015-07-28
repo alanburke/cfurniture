@@ -1,5 +1,6 @@
 temp
 node_modules
+bower_components
 app/css
 app/_data/ranges.csv
 app/_data/products.csv
