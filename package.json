@@ -25,7 +25,7 @@
     "gulp-uncss": "^1.0.0"
   },
   "scripts": {
-    "generate": "./scripts/get-sources.sh && ./scripts/get-sources.sh",
+    "generate": "./scripts/get-sources.sh && ./scripts/gen-pages.sh",
     "build": "gulp jekyll && gulp styles && gulp revreplace",
     "start": "gulp"
   }
