@@ -43,11 +43,13 @@ gulp.task('copystyles', function () {
         }))
         .pipe(gulp.dest('dist/css'));
 });
+
+// This is failing due to bug in Phantomjs
 gulp.task('critical', ['styles'], function () {
     critical.generateInline({
         base: 'dist/',
         src: 'index.html',
-        styleTarget: 'css/site.css',
+        styleTarget: 'css/style.css',
         htmlTarget: 'index.html',
         width: 320,
         height: 480,
