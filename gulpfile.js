@@ -2,12 +2,8 @@ var gulp = require('gulp');
     sourcemaps = require('gulp-sourcemaps'),
     sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
-    rename = require('gulp-rename'),
     minifycss = require('gulp-minify-css'),
-    concat = require('gulp-concat'),
-    notify = require('gulp-notify'),
     livereload = require('gulp-livereload'),
-    del = require('del');
     shell = require('gulp-shell');
     rev    = require('gulp-rev');
     revreplace    = require('gulp-rev-replace');
@@ -34,14 +30,6 @@ gulp.task('styles', function() {
 //    .pipe(uncss({html: ['dist/**/*.html'], ignoreSheets: [ 'colorbox.css'] }))
 //    .pipe(minifycss())
     .pipe(gulp.dest('dist/css'));
-});
-
-gulp.task('copystyles', function () {
-    return gulp.src(['dist/css/style.css'])
-        .pipe($.rename({
-            basename: "site" // site.css
-        }))
-        .pipe(gulp.dest('dist/css'));
 });
 
 // This is failing due to bug in Phantomjs
