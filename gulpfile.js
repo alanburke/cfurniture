@@ -22,7 +22,7 @@ var browserSync = require("browser-sync");
 var reload = browserSync.reload;
 
 var config = {
-    bootstrapDir: './bower_components/bootstrap-sass',
+    bootstrapDir: './node_modules/bootstrap-sass',
 };
 
 gulp.task('styles', function() {
