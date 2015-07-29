@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "dependencies": {},
   "devDependencies": {
-    "bootstrap-sass": "^3.3.4",
+    "bootstrap-sass": "3.3.4",
     "browser-sync": "^2.2.1",
     "casperjs": "^1.1.0-beta3",
     "critical": "^0.5.5",
