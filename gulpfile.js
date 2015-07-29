@@ -32,7 +32,7 @@ gulp.task('styles', function() {
      }))
     .pipe(autoprefixer({browsers: ['last 2 versions', 'ie 8', 'ie 9']}))
 //    .pipe(uncss({html: ['dist/**/*.html'], ignoreSheets: [ 'colorbox.css'] }))
-    .pipe(minifycss())
+//    .pipe(minifycss())
     .pipe(gulp.dest('dist/css'));
 });
 
