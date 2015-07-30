@@ -19,11 +19,16 @@
     "gulp-sass": "^1.3.3",
     "gulp-shell": "^0.3.0",
     "gulp-sourcemaps": "^1.3.0",
-    "gulp-uncss": "^1.0.0"
+    "gulp-uncss": "^1.0.0",
+    "node-sass": "^3.2.0"
   },
   "scripts": {
     "generate": "./scripts/get-sources.sh && ./scripts/gen-pages.sh",
-    "build": "gulp jekyll && gulp styles && gulp revreplace",
+    "jekyll:dev": "bundle exec jekyll build -s app -d dev",
+    "jekyll": "bundle exec jekyll build -s app -d dist",
+    "styles:dev": "node-sass --include-path ./node_modules/bootstrap-sass/assets/stylesheets app/sass/ -o dev/css/",
+    "styles": "node-sass --include-path ./node_modules/bootstrap-sass/assets/stylesheets --output-style=compressed app/sass/ -o dist/css/",
+    "build": "npm run jekyll && gulp styles && gulp revreplace",
     "start": "gulp"
   }
 }
