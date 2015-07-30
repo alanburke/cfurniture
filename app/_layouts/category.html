@@ -16,7 +16,7 @@ layout: default
           <div class="col-xs-6 col-md-3">
               <a href="/{{ range.category }}/{{ range.code }}.html" class="thumbnail">
                 <img class="img-responsive" src="/media/images/ranges/{{ range.image }}">
-                {{ range.range | capitalize }}
+                <p class="item-label">{{ range.range | capitalize }}</p>
               </a>
           </div>
         {% endif %}
