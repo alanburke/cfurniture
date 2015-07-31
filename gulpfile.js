@@ -32,6 +32,18 @@ gulp.task('styles', function() {
     .pipe(gulp.dest('dist/css'));
 });
 
+gulp.task('styles:dev', function() {
+  return gulp.src('app/sass/*.scss')
+    .pipe(sourcemaps.init())
+    .pipe(sass({
+      includePaths: [config.bootstrapDir + '/assets/stylesheets'],
+     }))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('dev/css'))
+    // Injects the CSS changes to your browser since Jekyll doesn"t rebuild the CSS
+    .pipe(reload({stream: true}));
+});
+
 // This is failing due to bug in Phantomjs
 gulp.task('critical', ['styles'], function () {
     critical.generateInline({
@@ -43,21 +55,6 @@ gulp.task('critical', ['styles'], function () {
         height: 480,
         minify: true
     });
-});
-
-gulp.task('styles:dev', function() {
-  return gulp.src('app/sass/*.scss')
-    .pipe(sourcemaps.init())
-    .pipe(sass({
-      includePaths: [config.bootstrapDir + '/assets/stylesheets'],
-     }))
-    // Autoprefixer breaks sourcemaps right now
-    //.pipe(autoprefixer({browsers: ['last 2 versions', 'ie 8', 'ie 9']}))
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest('app/css'))
-    .pipe(gulp.dest('dev/css'))
-    // Injects the CSS changes to your browser since Jekyll doesn"t rebuild the CSS
-    .pipe(reload({stream: true}));
 });
 
 gulp.task("jekyll", shell.task("bundle exec jekyll build"));
