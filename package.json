@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "dependencies": {},
   "devDependencies": {
+    "autoprefixer": "^5.2.0",
     "bootstrap-sass": "3.3.4",
     "browser-sync": "^2.2.1",
     "casperjs": "^1.1.0-beta3",
@@ -20,14 +21,21 @@
     "gulp-shell": "^0.3.0",
     "gulp-sourcemaps": "^1.3.0",
     "gulp-uncss": "^1.0.0",
-    "node-sass": "^3.2.0"
+    "node-sass": "^3.2.0",
+    "parallelshell": "^2.0.0",
+    "postcss-cli": "^1.5.0",
+    "watch": "^0.16.0"
   },
   "scripts": {
     "generate": "./scripts/get-sources.sh && ./scripts/gen-pages.sh",
-    "jekyll:dev": "bundle exec jekyll build -s app -d dev",
     "jekyll": "bundle exec jekyll build -s app -d dist",
-    "styles:dev": "node-sass --include-path ./node_modules/bootstrap-sass/assets/stylesheets app/sass/ -o dev/css/",
+    "jekyll:dev": "bundle exec jekyll build -s app -d dev",
+    "jekyll:dev:watch": "npm run jekyll:dev -- --watch",
     "styles": "node-sass --include-path ./node_modules/bootstrap-sass/assets/stylesheets --output-style=compressed app/sass/ -o dist/css/",
+    "styles:dev": "./node_modules/node-sass/bin/node-sass --include-path ./node_modules/bootstrap-sass/assets/stylesheets --sourceMap=true --sourceMapEmbed=true  --source-map-contents=true app/sass -o dev/css/",
+    "styles:dev:watch": "npm run styles:dev -- --watch",
+    "devel": "parallelshell 'npm run jekyll:dev' 'npm run styles:dev' ",
+    "devel:watch": "watch 'npm run devel' app",
     "build": "npm run jekyll && gulp styles && gulp revreplace",
     "start": "gulp"
   }
