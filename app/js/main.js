@@ -9,6 +9,12 @@ $(document).ready(function(){
             maxWidth: '100%',
             maxHeight: '100%'
           });
+          $('a.single').colorbox({
+            rel:'single',
+            scalePhotos: true,
+            maxWidth: '100%',
+            maxHeight: '100%'
+          });
         }
     }
 
