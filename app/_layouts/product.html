@@ -64,7 +64,7 @@ layout: default
           {% if page.displaySale  == 'y' %} </strike>{% endif %}
         {% endif %}
         {% if page.displaySale  == 'y' %}
-          <p class="bg-warning lead price-info price-sale"> Sale price: <span class="glyphicon glyphicon-eur" aria-hidden="true"></span> {{ page.Sale}} </p>
+          <p class="bg-danger text-muted lead price-info price-sale"> Sale price: <span class="glyphicon glyphicon-eur" aria-hidden="true"></span> {{ page.Sale}} </p>
         {% endif %}
         {{ content }}
       </div>
