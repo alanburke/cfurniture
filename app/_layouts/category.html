@@ -17,6 +17,7 @@ layout: default
               <a href="/{{ range.category }}/{{ range.code }}.html" class="thumbnail">
                 <img class="img-responsive" src="/media/images/ranges/{{ range.image }}">
                 <p class="item-label">{{ range.range | capitalize }}</p>
+                {% if range.tagline %}<p class="item-tagline">{{ range.tagline }}</p>{% endif %}
               </a>
           </div>
         {% endif %}
