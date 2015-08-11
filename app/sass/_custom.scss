@@ -27,6 +27,19 @@ p.price-info {
   margin: 10px;
   text-transform: capitalize;
 }
+.thumbnail {
+  position: relative;
+}
+.thumbnail p.item-tagline {
+  text-align: center;
+  position: absolute;
+  top: 0;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fafafa;
+  width: 100%;
+  margin: 0 4px 0 -4px;
+}
 
 /* Category Page */
 .jumbotron-wrapper {
