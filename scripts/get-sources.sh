@@ -7,6 +7,9 @@ rm $RAW/*.csv*
 # Get the Raw data in xls format
 wget https://dl.dropboxusercontent.com/u/$DROPBOX_UID/www.cfurniture.ie/sources/details.xls -O $RAW/details.xls
 
+# Get Homepage image
+wget https://dl.dropboxusercontent.com/u/$DROPBOX_UID/www.cfurniture.ie/images/home.jpg -O app/media/images/categories/home.jpg
+
 in2csv $RAW/details.xls > $RAW/ranges-commas.csv
 # Replace pipes with br tags
 sed -ie 's/|/<br \/>/g' $RAW/ranges-commas.csv 
