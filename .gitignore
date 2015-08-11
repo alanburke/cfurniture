@@ -9,6 +9,7 @@ app/_posts/ranges
 app/media/images/ranges
 app/media/images/products
 app/media/specsheets
+app/media/categories
 dev
 Gemfile.lock
 .env
