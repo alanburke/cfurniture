@@ -2,10 +2,10 @@
 layout: single 
 permalink : matresses 
 title: Matresses
-desc : Description Here
-tagline: Tagline here
+desc : Respa, King Koil, Odearest, SpringAir, and our own exclusive brand Phoenix
+tagline: Get the good night's sleep you deserve by choosing from one of the large range of matresses and we will make sure you sleep well with the fantastic value we have to offer.
 image: 004-041.jpg
 image2: 
 image3: 
-pricingNote: Pricing Note here
+pricingNote: 
 ---
