@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Clean up
 RAW=scripts/raw
 rm $RAW/*.xls
