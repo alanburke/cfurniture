@@ -10,9 +10,9 @@ IFS="|"
 while read code range desc options tagline image category specsheet
 do
   DESTFILE=app/_posts/ranges/0001-01-01-$code.md
-  SOURCEIMAGE=https://dl.dropboxusercontent.com/u/8703195/www.cfurniture.ie/media/images/$image
+  SOURCEIMAGE=https://dl.dropboxusercontent.com/u/$DROPBOX_UID/www.cfurniture.ie/images/$image
   wget $SOURCEIMAGE -O app/media/images/ranges/$image
-  SOURCESPECSHEET=https://dl.dropboxusercontent.com/u/8703195/www.cfurniture.ie/media/pdfs/$specsheet
+  SOURCESPECSHEET=https://dl.dropboxusercontent.com/u/$DROPBOX_UID/www.cfurniture.ie/pdfs/$specsheet
   wget $SOURCESPECSHEET -O app/media/specsheets/$specsheet
   echo "---" > $DESTFILE
   echo "layout: range" >> $DESTFILE
@@ -39,7 +39,7 @@ IFS="|"
 while read code name desc tagline image image2 image3 range RRP displayRRP Unit displayUnit Sale displaySale Special pricingNote
 do
   DESTFILE=app/_posts/products/0001-01-01-$code.md
-  SOURCEPATH=https://dl.dropboxusercontent.com/u/8703195/www.cfurniture.ie/media/images
+  SOURCEPATH=https://dl.dropboxusercontent.com/u/$DROPBOX_UID/www.cfurniture.ie/images
   SOURCEIMAGE1=$SOURCEPATH/$image
   SOURCEIMAGE2=$SOURCEPATH/$image2
   SOURCEIMAGE3=$SOURCEPATH/$image3
