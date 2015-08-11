@@ -76,7 +76,7 @@ layout: default
           {% if product.range == page.range %}
           <div class="col-xs-6 col-md-3">
               <a href="/product/{{ product.code }}.html" class="thumbnail">
-                <img class="img-responsive" src="/media/images/products/{{ product.image }}">
+                <img class="img-responsive" src="/media/generated/thumbs/products/{{ product.image }}">
                 <p class="item-label">{{ product.name | capitalize }}</p>
               </a>
           </div>
