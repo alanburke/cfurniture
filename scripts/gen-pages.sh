@@ -12,7 +12,7 @@ do
   DESTFILE=app/_posts/ranges/0001-01-01-$code.md
   SOURCEIMAGE=https://dl.dropboxusercontent.com/u/$DROPBOX_UID/www.cfurniture.ie/images/$image
   wget $SOURCEIMAGE -O app/media/images/ranges/$image
-  convert app/media/images/ranges/$image -resize 240x160 -quality 80 app/media/generated/thumbs/ranges/$image
+  convert app/media/images/ranges/$image -resize "255x170^" -gravity center -crop 255x170+0+0 +repage -quality 80 app/media/generated/thumbs/ranges/$image
   SOURCESPECSHEET=https://dl.dropboxusercontent.com/u/$DROPBOX_UID/www.cfurniture.ie/pdfs/$specsheet
   wget $SOURCESPECSHEET -O app/media/specsheets/$specsheet
   echo "---" > $DESTFILE
@@ -45,11 +45,11 @@ do
   SOURCEIMAGE2=$SOURCEPATH/$image2
   SOURCEIMAGE3=$SOURCEPATH/$image3
   wget $SOURCEIMAGE1 -O app/media/images/products/$image
-  convert app/media/images/products/$image -resize 240x160 -quality 80 app/media/generated/thumbs/products/$image
+  convert app/media/images/products/$image -resize "255x170^" -gravity center -crop 255x170+0+0 +repage -quality 80 app/media/generated/thumbs/products/$image
   wget $SOURCEIMAGE2 -O app/media/images/products/$image2
-  convert app/media/images/products/$image2 -resize 240x160 -quality 80 app/media/generated/thumbs/products/$image2
+  convert app/media/images/products/$image2 -resize "255x170^" -gravity center -crop 255x170+0+0 +repage -quality 80 app/media/generated/thumbs/products/$image2
   wget $SOURCEIMAGE3 -O app/media/images/products/$image3
-  convert app/media/images/products/$image3 -resize 240x160 -quality 80 app/media/generated/thumbs/products/$image3
+  convert app/media/images/products/$image3 -resize "255x170^" -gravity center -crop 255x170+0+0 +repage -quality 80 app/media/generated/thumbs/products/$image3
   echo "---" > $DESTFILE
   echo "layout: product" >> $DESTFILE
   echo "code : $code" >> $DESTFILE
