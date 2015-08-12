@@ -9,22 +9,22 @@ layout: default
           <img class="img-responsive img-rounded" src="/media/images/products/{{ page.image }}">
         </figure>
           <div class="row">
-          {% if page.image2 %} 
+          {% if page.image2 %}
             <div class="col-xs-4 col-md-4">
               <a class="gallery" href="/media/images/products/{{ page.image }}" class="thumbnail">
-              <img class="img-responsive" src="/media/images/products/{{ page.image }}">
+              <img class="img-responsive" src="/media/generated/thumbs/products/{{ page.image }}">
               </a>
             </div>
             <div class="col-xs-4 col-md-4">
               <a class="gallery" href="/media/images/products/{{ page.image2 }}" class="thumbnail">
-              <img class="img-responsive" src="/media/images/products/{{ page.image2 }}">
+              <img class="img-responsive" src="/media/generated/thumbs/products/{{ page.image2 }}">
               </a>
             </div>
           {% endif %}
-          {% if page.image3 %} 
+          {% if page.image3 %}
             <div class="col-xs-4 col-md-4">
               <a class="gallery" href="/media/images/products/{{ page.image3 }}" class="thumbnail">
-              <img class="img-responsive" src="/media/images/products/{{ page.image3 }}">
+              <img class="img-responsive" src="/media/generated/thumbs/products/{{ page.image3 }}">
               </a>
             </div>
           {% endif %}
