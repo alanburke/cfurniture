@@ -11,22 +11,22 @@ wget https://dl.dropboxusercontent.com/u/$DROPBOX_UID/www.cfurniture.ie/sources/
 wget https://dl.dropboxusercontent.com/u/$DROPBOX_UID/www.cfurniture.ie/images/home.jpg -O app/media/images/categories/home.jpg
 
 # Get Flooring and Matress images
-$image='flooring.jpg'
+image='flooring.jpg'
 wget https://dl.dropboxusercontent.com/u/$DROPBOX_UID/www.cfurniture.ie/images/flooring.jpg -O app/media/images/products/flooring.jpg
 convert app/media/images/products/$image -resize "255x170^" -gravity center -crop 255x170+0+0 +repage -quality 80 app/media/generated/thumbs/products/$image
-$image='flooring2.jpg'
+image='flooring2.jpg'
 wget https://dl.dropboxusercontent.com/u/$DROPBOX_UID/www.cfurniture.ie/images/flooring1.jpg -O app/media/images/products/flooring1.jpg
 convert app/media/images/products/$image -resize "255x170^" -gravity center -crop 255x170+0+0 +repage -quality 80 app/media/generated/thumbs/products/$image
-$image='flooring3.jpg'
+image='flooring3.jpg'
 wget https://dl.dropboxusercontent.com/u/$DROPBOX_UID/www.cfurniture.ie/images/flooring2.jpg -O app/media/images/products/flooring2.jpg
 convert app/media/images/products/$image -resize "255x170^" -gravity center -crop 255x170+0+0 +repage -quality 80 app/media/generated/thumbs/products/$image
-$image='matts.jpg'
+image='matts.jpg'
 wget https://dl.dropboxusercontent.com/u/$DROPBOX_UID/www.cfurniture.ie/images/matts.jpg -O app/media/images/products/matts.jpg
 convert app/media/images/products/$image -resize "255x170^" -gravity center -crop 255x170+0+0 +repage -quality 80 app/media/generated/thumbs/products/$image
-$image='matts1.jpg'
+image='matts1.jpg'
 wget https://dl.dropboxusercontent.com/u/$DROPBOX_UID/www.cfurniture.ie/images/matts1.jpg -O app/media/images/products/matts1.jpg
 convert app/media/images/products/$image -resize "255x170^" -gravity center -crop 255x170+0+0 +repage -quality 80 app/media/generated/thumbs/products/$image
-$image='matts2.jpg'
+image='matts2.jpg'
 wget https://dl.dropboxusercontent.com/u/$DROPBOX_UID/www.cfurniture.ie/images/matts2.jpg -O app/media/images/products/matts2.jpg
 convert app/media/images/products/$image -resize "255x170^" -gravity center -crop 255x170+0+0 +repage -quality 80 app/media/generated/thumbs/products/$image
 
