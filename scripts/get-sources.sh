@@ -14,10 +14,10 @@ wget https://dl.dropboxusercontent.com/u/$DROPBOX_UID/www.cfurniture.ie/images/h
 image='flooring.jpg'
 wget https://dl.dropboxusercontent.com/u/$DROPBOX_UID/www.cfurniture.ie/images/flooring.jpg -O app/media/images/products/flooring.jpg
 convert app/media/images/products/$image -resize "255x170^" -gravity center -crop 255x170+0+0 +repage -quality 80 app/media/generated/thumbs/products/$image
-image='flooring2.jpg'
+image='flooring1.jpg'
 wget https://dl.dropboxusercontent.com/u/$DROPBOX_UID/www.cfurniture.ie/images/flooring1.jpg -O app/media/images/products/flooring1.jpg
 convert app/media/images/products/$image -resize "255x170^" -gravity center -crop 255x170+0+0 +repage -quality 80 app/media/generated/thumbs/products/$image
-image='flooring3.jpg'
+image='flooring2.jpg'
 wget https://dl.dropboxusercontent.com/u/$DROPBOX_UID/www.cfurniture.ie/images/flooring2.jpg -O app/media/images/products/flooring2.jpg
 convert app/media/images/products/$image -resize "255x170^" -gravity center -crop 255x170+0+0 +repage -quality 80 app/media/generated/thumbs/products/$image
 image='matts.jpg'
