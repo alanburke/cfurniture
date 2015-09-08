@@ -10,6 +10,7 @@ IFS="|"
 while read code range desc options tagline image category specsheet
 do
   DESTFILE=app/_posts/ranges/0001-01-01-$code.md
+  PERMALINK=$(echo $name | sed 's/[^a-zA-Z0-9]/-/g' |  tr '[:upper:]' '[:lower:]')
   SOURCEIMAGE=https://dl.dropboxusercontent.com/u/$DROPBOX_UID/www.cfurniture.ie/images/$image
   wget $SOURCEIMAGE -O app/media/images/ranges/$image
   convert app/media/images/ranges/$image -resize "255x170^" -gravity center -crop 255x170+0+0 +repage -quality 80 app/media/generated/thumbs/ranges/$image
@@ -19,7 +20,7 @@ do
   echo "layout: range" >> $DESTFILE
   echo "title: $range" >> $DESTFILE
   echo "code: $code" >> $DESTFILE
-  echo "permalink: $category/$code.html" >> $DESTFILE
+  echo "permalink: $category/$PERMALINK.html" >> $DESTFILE
   echo "range: $range" >> $DESTFILE
   echo "desc: $desc" >> $DESTFILE
   echo "options: $options" >> $DESTFILE
@@ -44,6 +45,7 @@ do
   SOURCEIMAGE1=$SOURCEPATH/$image
   SOURCEIMAGE2=$SOURCEPATH/$image2
   SOURCEIMAGE3=$SOURCEPATH/$image3
+  PERMALINK=$(echo $name | sed 's/[^a-zA-Z0-9]/-/g' |  tr '[:upper:]' '[:lower:]')
   wget $SOURCEIMAGE1 -O app/media/images/products/$image
   convert app/media/images/products/$image -resize "255x170^" -gravity center -crop 255x170+0+0 +repage -quality 80 app/media/generated/thumbs/products/$image
   wget $SOURCEIMAGE2 -O app/media/images/products/$image2
@@ -55,7 +57,7 @@ do
   echo "code : $code" >> $DESTFILE
   echo "title: $name" >> $DESTFILE
   echo "name: $name" >> $DESTFILE
-  echo "permalink : product/$code.html" >> $DESTFILE
+  echo "permalink : product/$PERMALINK.html" >> $DESTFILE
   echo "desc : $desc" >> $DESTFILE
   echo "tagline: $tagline" >> $DESTFILE
   echo "image: $image" >> $DESTFILE
