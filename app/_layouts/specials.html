@@ -14,7 +14,8 @@ layout: default
         {% for product in site.data.products %}
         {% if product.Special == 'y' %}
           <div class="col-xs-6 col-md-3">
-              <a href="/product/{{ product.code }}.html" class="thumbnail">
+              {% assign prodPermalink = product.name | downcase | replace:"'","-" | replace:'"','-' | replace:'+','-' | replace:'(','-' | replace:')','-' | replace:'.','-' |  replace:' ','-' %}
+              <a href="/product/{{ prodPermalink }}.html" class="thumbnail">
                 <img class="img-responsive" src="/media/generated/thumbs/products/{{ product.image }}">
                 <p class="item-label">{{ product.name | capitalize }}</p>
               </a>
