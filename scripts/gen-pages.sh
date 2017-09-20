@@ -11,10 +11,10 @@ while read code range desc options tagline image category specsheet
 do
   DESTFILE=app/_posts/ranges/0001-01-01-$code.md
   PERMALINK=$(echo $range | sed 's/[^a-zA-Z0-9]/-/g' |  tr '[:upper:]' '[:lower:]')
-  SOURCEIMAGE=https://dl.dropboxusercontent.com/u/$DROPBOX_UID/www.cfurniture.ie/images/$image
+  SOURCEIMAGE=https://s3-eu-west-1.amazonaws.com/raw.cfurniture.ie/www.cfurniture.ie/images/$image
   wget $SOURCEIMAGE -O app/media/images/ranges/$image
   convert app/media/images/ranges/$image -resize "255x170^" -gravity center -crop 255x170+0+0 +repage -quality 80 app/media/generated/thumbs/ranges/$image
-  SOURCESPECSHEET=https://dl.dropboxusercontent.com/u/$DROPBOX_UID/www.cfurniture.ie/pdfs/$specsheet
+  SOURCESPECSHEET=https://s3-eu-west-1.amazonaws.com/raw.cfurniture.ie/www.cfurniture.ie/pdfs/$specsheet
   wget $SOURCESPECSHEET -O app/media/specsheets/$specsheet
   echo "---" > $DESTFILE
   echo "layout: range" >> $DESTFILE
@@ -41,7 +41,7 @@ IFS="|"
 while read code name desc tagline image image2 image3 range RRP displayRRP Unit displayUnit Sale displaySale Special pricingNote
 do
   DESTFILE=app/_posts/products/0001-01-01-$code.md
-  SOURCEPATH=https://dl.dropboxusercontent.com/u/$DROPBOX_UID/www.cfurniture.ie/images
+  SOURCEPATH=https://s3-eu-west-1.amazonaws.com/raw.cfurniture.ie/www.cfurniture.ie/images
   SOURCEIMAGE1=$SOURCEPATH/$image
   SOURCEIMAGE2=$SOURCEPATH/$image2
   SOURCEIMAGE3=$SOURCEPATH/$image3
