@@ -1,6 +1,8 @@
 machine:
   ruby:
       version: 2.1.1
+  node:
+      version: 8.5.0
   pre:
     - npm install -g casperjs@1.1.0-beta3
     - sudo pip install csvkit --allow-external csvkit --allow-unverified csvkit
