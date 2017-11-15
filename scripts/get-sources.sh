@@ -31,7 +31,7 @@ wget https://s3-eu-west-1.amazonaws.com/raw.cfurniture.ie/www.cfurniture.ie/imag
 convert app/media/images/products/$image -resize "255x170^" -gravity center -crop 255x170+0+0 +repage -quality 80 app/media/generated/thumbs/products/$image
 
 
-in2csv $RAW/details.xls > $RAW/ranges-commas.csv
+in2csv --sheet ranges $RAW/details.xls > $RAW/ranges-commas.csv
 # Replace pipes with br tags
 sed -ie 's/|/<br \/>/g' $RAW/ranges-commas.csv 
 # Send to data folder
