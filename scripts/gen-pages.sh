@@ -101,3 +101,45 @@ do
   echo "---" >> $DESTFILE
 done < $INPUT
 IFS=$OLDIFS
+
+# Clean up
+rm -rf app/_posts/categories/*
+INPUT=$RAW/categories-pipes.csv
+OLDIFS=$IFS
+IFS="|"
+[ ! -f $INPUT ] && { echo "$INPUT file not found"; exit 99; }
+while read code department title desc image
+do
+  DESTFILE=app/_posts/categories/0001-01-01-$code.md
+  PERMALINK=$(echo $code | sed 's/[^a-zA-Z0-9]/-/g' |  tr '[:upper:]' '[:lower:]')
+  echo "---" > $DESTFILE
+  echo "code : $code" >> $DESTFILE
+  echo "layout: department" >> $DESTFILE
+  echo "permalink : $PERMALINK" >> $DESTFILE
+  echo "department: $department" >> $DESTFILE
+  echo "title: $title" >> $DESTFILE
+  echo "description: $desc" >> $DESTFILE
+  echo "---" >> $DESTFILE
+done < $INPUT
+IFS=$OLDIFS
+
+# Clean up
+rm -rf app/_posts/subcategories/*
+INPUT=$RAW/subcategories-pipes.csv
+OLDIFS=$IFS
+IFS="|"
+[ ! -f $INPUT ] && { echo "$INPUT file not found"; exit 99; }
+while read code category title desc image
+do
+  DESTFILE=app/_posts/subcategories/0001-01-01-$code.md
+  PERMALINK=$(echo $code | sed 's/[^a-zA-Z0-9]/-/g' |  tr '[:upper:]' '[:lower:]')
+  echo "---" > $DESTFILE
+  echo "code : $code" >> $DESTFILE
+  echo "layout: department" >> $DESTFILE
+  echo "permalink : $PERMALINK" >> $DESTFILE
+  echo "category: $category" >> $DESTFILE
+  echo "title: $title" >> $DESTFILE
+  echo "description: $desc" >> $DESTFILE
+  echo "---" >> $DESTFILE
+done < $INPUT
+IFS=$OLDIFS
