@@ -47,3 +47,30 @@ sed -ie 's/|/<br \/>/g' $RAW/products-commas.csv
 cp $RAW/products-commas.csv app/_data/products.csv
 # Convert to pipe seperated csv minus first row
 csvformat -D '|' $RAW/products-commas.csv | tail -n +2 > $RAW/products-pipes.csv
+
+# Departments
+in2csv --sheet departments $RAW/details.xls  > $RAW/departments-commas.csv
+# Replace pipes with br tags
+sed -ie 's/|/<br \/>/g' $RAW/departments-commas.csv
+# Send to data folder
+cp $RAW/departments-commas.csv app/_data/departments.csv
+# Convert to pipe seperated csv minus first row
+csvformat -D '|' $RAW/departments-commas.csv | tail -n +2 > $RAW/departments-pipes.csv
+
+# Categories
+in2csv --sheet categories $RAW/details.xls  > $RAW/categories-commas.csv
+# Replace pipes with br tags
+sed -ie 's/|/<br \/>/g' $RAW/categories-commas.csv
+# Send to data folder
+cp $RAW/categories-commas.csv app/_data/categories.csv
+# Convert to pipe seperated csv minus first row
+csvformat -D '|' $RAW/categories-commas.csv | tail -n +2 > $RAW/categories-pipes.csv
+
+# subcategories
+in2csv --sheet subcategories $RAW/details.xls  > $RAW/subcategories-commas.csv
+# Replace pipes with br tags
+sed -ie 's/|/<br \/>/g' $RAW/subcategories-commas.csv
+# Send to data folder
+cp $RAW/subcategories-commas.csv app/_data/subcategories.csv
+# Convert to pipe seperated csv minus first row
+csvformat -D '|' $RAW/subcategories-commas.csv | tail -n +2 > $RAW/subcategories-pipes.csv
