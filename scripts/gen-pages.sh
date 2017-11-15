@@ -75,3 +75,29 @@ do
   echo "---" >> $DESTFILE
 done < $INPUT
 IFS=$OLDIFS
+
+# Clean up
+rm -rf app/_posts/departments/*
+INPUT=$RAW/departments-pipes.csv
+OLDIFS=$IFS
+IFS="|"
+[ ! -f $INPUT ] && { echo "$INPUT file not found"; exit 99; }
+while read code department image desc
+do
+  DESTFILE=app/_posts/departments/0001-01-01-$code.md
+  SOURCEPATH=https://s3-eu-west-1.amazonaws.com/raw.cfurniture.ie/www.cfurniture.ie/images
+  SOURCEIMAGE1=$SOURCEPATH/$image
+  PERMALINK=$(echo $code | sed 's/[^a-zA-Z0-9]/-/g' |  tr '[:upper:]' '[:lower:]')
+  wget $SOURCEIMAGE1 -O app/media/images/products/$image
+  convert app/media/images/products/$image -resize "255x170^" -gravity center -crop 255x170+0+0 +repage -quality 80 app/media/generated/thumbs/products/$image
+  echo "---" > $DESTFILE
+  echo "code : $code" >> $DESTFILE
+  echo "layout: department" >> $DESTFILE
+  echo "permalink : $PERMALINK.html" >> $DESTFILE
+  echo "category: $code" >> $DESTFILE
+  echo "title: $department " >> $DESTFILE
+  echo "image: $image" >> $DESTFILE
+  echo "description: $desc" >> $DESTFILE
+  echo "---" >> $DESTFILE
+done < $INPUT
+IFS=$OLDIFS
