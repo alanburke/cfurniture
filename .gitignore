@@ -2,10 +2,12 @@ temp
 node_modules
 bower_components
 app/css
-app/_data/ranges.csv
-app/_data/products.csv
+app/_data/*.csv
+app/_posts/departments
 app/_posts/products
 app/_posts/ranges
+app/_posts/categories
+app/_posts/subcategories
 app/media/images/ranges
 app/media/images/products
 app/media/specsheets
