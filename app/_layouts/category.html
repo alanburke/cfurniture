@@ -11,14 +11,27 @@ layout: default
     </section>
 
     <section class="container related">
-      {% for range in site.data.ranges %}
-        {% if range.category == page.category %}
+      {% for product in site.data.products %}
+        {% if product.category == page.code %}
           <div class="col-xs-6 col-md-3">
-             {% assign rangePermalink = range.range | downcase | replace:' ','-' %}
-              <a href="/{{ range.category }}/{{ rangePermalink }}.html" class="thumbnail">
-                <img class="img-responsive" src="/media/generated/thumbs/ranges/{{ range.image }}">
-                <p class="item-label">{{ range.range | capitalize }}</p>
-                {% if range.tagline %}<p class="item-tagline">{{ range.tagline }}</p>{% endif %}
+             {% assign productPermalink = product.code | downcase | replace:' ','-' %}
+              <a href="/product//{{ productPermalink }}.html" class="thumbnail">
+                <img class="img-responsive" src="/media/generated/thumbs/products/{{ product.image }}">
+                <p class="item-label">{{ product.name | capitalize }}</p>
+              </a>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </section>
+
+    <section class="container subcategories">
+                        <p><strong> Browse by category </strong></p>
+      {% for subcategory in site.data.subcategories %}
+        {% if subcategory.category == page.code %}
+          <div class="col-xs-6 col-md-3">
+             {% assign subcategoryPermalink = subcategory.code | downcase | replace:' ','-' %}
+              <a href="/{{ page.code }}/{{ subcategoryPermalink }}" class="thumbnail">
+                <p class="item-label">{{ subcategory.title | capitalize }}</p>
               </a>
           </div>
         {% endif %}
