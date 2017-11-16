@@ -5,8 +5,8 @@ layout: default
 {% for range in site.data.ranges %}
   {% if range.code == page.range %}
     {% assign rangeName = range.range %}
-    {% assign rangeCategory = range.category %}
-    {% assign rangePermalink = range.range | downcase | replace:' ','-' %}
+    {% assign rangeDept = range.department %}
+    {% assign rangePermalink = range.code | downcase | replace:' ','-' %}
   {% endif %}
 {% endfor %}
 
@@ -15,8 +15,8 @@ layout: default
       <div class="col-md-12">
         <ol class="breadcrumb">
           <li><a href="/">Home</a></li>
-          <li><a href="/{{ rangeCategory }}">{{ rangeCategory }}</a></li>
-          <li><a href="/{{ rangeCategory }}/{{ rangePermalink }}.html">{{ rangeName }}</a></li>
+          <li><a href="/{{ rangeDept }}">{{ rangeDept }}</a></li>
+          <li><a href="/{{ rangeDept }}/{{ rangePermalink }}.html">{{ rangeName }}</a></li>
           <li class="active">{{ page.name }}</li>
         </ol>
       </div>
