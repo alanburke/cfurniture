@@ -38,7 +38,7 @@ INPUT=$RAW/products-pipes.csv
 OLDIFS=$IFS
 IFS="|"
 [ ! -f $INPUT ] && { echo "$INPUT file not found"; exit 99; }
-while read code name desc tagline image image2 image3 range RRP displayRRP Unit displayUnit Sale displaySale Special pricingNote
+while read code name desc tagline image image2 image3 range RRP displayRRP Unit displayUnit Sale displaySale Special pricingNote category subcategory
 do
   DESTFILE=app/_posts/products/0001-01-01-$code.md
   SOURCEPATH=https://s3-eu-west-1.amazonaws.com/raw.cfurniture.ie/www.cfurniture.ie/images
@@ -72,6 +72,8 @@ do
   echo "displaySale: $displaySale" >> $DESTFILE
   echo "Special: $Special" >> $DESTFILE
   echo "pricingNote: $pricingNote" >> $DESTFILE
+  echo "category: $category" >> $DESTFILE
+  echo "subcategory: $subcategory" >> $DESTFILE
   echo "---" >> $DESTFILE
 done < $INPUT
 IFS=$OLDIFS
