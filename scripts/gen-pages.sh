@@ -95,8 +95,8 @@ do
   echo "---" > $DESTFILE
   echo "code : $code" >> $DESTFILE
   echo "layout: department" >> $DESTFILE
-  echo "permalink : $PERMALINK.html" >> $DESTFILE
-  echo "category: $code" >> $DESTFILE
+  echo "permalink : $PERMALINK" >> $DESTFILE
+  echo "department: $code" >> $DESTFILE
   echo "title: $department " >> $DESTFILE
   echo "image: $image" >> $DESTFILE
   echo "description: $desc" >> $DESTFILE
@@ -116,8 +116,8 @@ do
   PERMALINK=$(echo $code | sed 's/[^a-zA-Z0-9]/-/g' |  tr '[:upper:]' '[:lower:]')
   echo "---" > $DESTFILE
   echo "code : $code" >> $DESTFILE
-  echo "layout: department" >> $DESTFILE
-  echo "permalink : $PERMALINK" >> $DESTFILE
+  echo "layout: category" >> $DESTFILE
+  echo "permalink : $department/$PERMALINK" >> $DESTFILE
   echo "department: $department" >> $DESTFILE
   echo "title: $title" >> $DESTFILE
   echo "description: $desc" >> $DESTFILE
@@ -137,8 +137,8 @@ do
   PERMALINK=$(echo $code | sed 's/[^a-zA-Z0-9]/-/g' |  tr '[:upper:]' '[:lower:]')
   echo "---" > $DESTFILE
   echo "code : $code" >> $DESTFILE
-  echo "layout: department" >> $DESTFILE
-  echo "permalink : $PERMALINK" >> $DESTFILE
+  echo "layout: subcategory" >> $DESTFILE
+  echo "permalink : $category/$PERMALINK" >> $DESTFILE
   echo "category: $category" >> $DESTFILE
   echo "title: $title" >> $DESTFILE
   echo "description: $desc" >> $DESTFILE
