@@ -89,7 +89,7 @@ layout: default
       <h4>Similar Items</h4>
       <div class="row related-items">
         {% for product in site.data.products %}
-          {% if product.subcategory == page.subcategory %}
+          {% if product.subcategory == page.subcategory and product.code != page.code  %}
           <div class="col-xs-6 col-md-3">
               {% assign prodPermalink = product.code | downcase | replace:"'","-" | replace:'"','-' | replace:'+','-' | replace:'(','-' | replace:')','-' | replace:'.','-' |  replace:' ','-' %}
               <a href="/product/{{ prodPermalink }}.html" class="thumbnail">
