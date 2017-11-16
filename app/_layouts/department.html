@@ -14,7 +14,7 @@ layout: default
       {% for range in site.data.ranges %}
         {% if range.department == page.department %}
           <div class="col-xs-6 col-md-3">
-             {% assign rangePermalink = range.range | downcase | replace:' ','-' %}
+             {% assign rangePermalink = range.code | downcase | replace:' ','-' %}
               <a href="/{{ range.department }}/{{ rangePermalink }}.html" class="thumbnail">
                 <img class="img-responsive" src="/media/generated/thumbs/ranges/{{ range.image }}">
                 <p class="item-label">{{ range.range | capitalize }}</p>

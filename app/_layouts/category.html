@@ -15,7 +15,7 @@ layout: default
         {% if product.category == page.code %}
           <div class="col-xs-6 col-md-3">
              {% assign productPermalink = product.code | downcase | replace:' ','-' %}
-              <a href="/product//{{ productPermalink }}.html" class="thumbnail">
+              <a href="/product/{{ productPermalink }}.html" class="thumbnail">
                 <img class="img-responsive" src="/media/generated/thumbs/products/{{ product.image }}">
                 <p class="item-label">{{ product.name | capitalize }}</p>
               </a>
@@ -25,7 +25,7 @@ layout: default
     </section>
 
     <section class="container subcategories">
-                        <p><strong> Browse by category </strong></p>
+      <p><strong> Browse by category </strong></p>
       {% for subcategory in site.data.subcategories %}
         {% if subcategory.category == page.code %}
           <div class="col-xs-6 col-md-3">
