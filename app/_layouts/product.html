@@ -85,5 +85,21 @@ layout: default
           {% endif %}
         {% endfor %}
       </div>
+
+      <h4>Similar Items</h4>
+      <div class="row related-items">
+        {% for product in site.data.products %}
+          {% if product.subcategory == page.subcategory %}
+          <div class="col-xs-6 col-md-3">
+              {% assign prodPermalink = product.code | downcase | replace:"'","-" | replace:'"','-' | replace:'+','-' | replace:'(','-' | replace:')','-' | replace:'.','-' |  replace:' ','-' %}
+              <a href="/product/{{ prodPermalink }}.html" class="thumbnail">
+                <img class="img-responsive" src="/media/generated/thumbs/products/{{ product.image }}">
+                <p class="item-label">{{ product.name | capitalize }}</p>
+              </a>
+          </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
 </div>
 <link href="/css/colorbox.css" rel="stylesheet" type="text/css" />
