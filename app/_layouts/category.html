@@ -30,7 +30,7 @@ layout: default
         {% if subcategory.category == page.code %}
           <div class="col-xs-6 col-md-3">
              {% assign subcategoryPermalink = subcategory.code | downcase | replace:' ','-' %}
-              <a href="/{{ page.code }}/{{ subcategoryPermalink }}" class="thumbnail">
+              <a href="/sub/{{ page.code }}/{{ subcategoryPermalink }}" class="thumbnail">
                 <p class="item-label">{{ subcategory.title | capitalize }}</p>
               </a>
           </div>
