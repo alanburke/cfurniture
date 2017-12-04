@@ -8,10 +8,8 @@ app/_posts/products
 app/_posts/ranges
 app/_posts/categories
 app/_posts/subcategories
-app/media/images/ranges
-app/media/images/products
+app/media/images/*
 app/media/specsheets
-app/media/images/categories
 app/media/generated
 dev
 Gemfile.lock
