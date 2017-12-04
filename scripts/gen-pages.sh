@@ -10,7 +10,7 @@ IFS="|"
 while read code range desc options tagline image category specsheet
 do
   DESTFILE=app/_posts/ranges/0001-01-01-$code.md
-  PERMALINK=$(echo $range | sed 's/[^a-zA-Z0-9]/-/g' |  tr '[:upper:]' '[:lower:]')
+  PERMALINK=$(echo $code | sed 's/[^a-zA-Z0-9]/-/g' |  tr '[:upper:]' '[:lower:]')
   SOURCEIMAGE=https://s3-eu-west-1.amazonaws.com/raw.cfurniture.ie/www.cfurniture.ie/images/$image
   wget $SOURCEIMAGE -O app/media/images/ranges/$image
   convert app/media/images/ranges/$image -resize "255x170^" -gravity center -crop 255x170+0+0 +repage -quality 80 app/media/generated/thumbs/ranges/$image
@@ -38,14 +38,14 @@ INPUT=$RAW/products-pipes.csv
 OLDIFS=$IFS
 IFS="|"
 [ ! -f $INPUT ] && { echo "$INPUT file not found"; exit 99; }
-while read code name desc tagline image image2 image3 range RRP displayRRP Unit displayUnit Sale displaySale Special pricingNote
+while read code name desc tagline image image2 image3 range RRP displayRRP Unit displayUnit Sale displaySale Special pricingNote category subcategory
 do
   DESTFILE=app/_posts/products/0001-01-01-$code.md
   SOURCEPATH=https://s3-eu-west-1.amazonaws.com/raw.cfurniture.ie/www.cfurniture.ie/images
   SOURCEIMAGE1=$SOURCEPATH/$image
   SOURCEIMAGE2=$SOURCEPATH/$image2
   SOURCEIMAGE3=$SOURCEPATH/$image3
-  PERMALINK=$(echo $name | sed 's/[^a-zA-Z0-9]/-/g' |  tr '[:upper:]' '[:lower:]')
+  PERMALINK=$(echo $code | sed 's/[^a-zA-Z0-9]/-/g' |  tr '[:upper:]' '[:lower:]')
   wget $SOURCEIMAGE1 -O app/media/images/products/$image
   convert app/media/images/products/$image -resize "255x170^" -gravity center -crop 255x170+0+0 +repage -quality 80 app/media/generated/thumbs/products/$image
   wget $SOURCEIMAGE2 -O app/media/images/products/$image2
@@ -72,6 +72,8 @@ do
   echo "displaySale: $displaySale" >> $DESTFILE
   echo "Special: $Special" >> $DESTFILE
   echo "pricingNote: $pricingNote" >> $DESTFILE
+  echo "category: $category" >> $DESTFILE
+  echo "subcategory: $subcategory" >> $DESTFILE
   echo "---" >> $DESTFILE
 done < $INPUT
 IFS=$OLDIFS
@@ -88,13 +90,13 @@ do
   SOURCEPATH=https://s3-eu-west-1.amazonaws.com/raw.cfurniture.ie/www.cfurniture.ie/images
   SOURCEIMAGE1=$SOURCEPATH/$image
   PERMALINK=$(echo $code | sed 's/[^a-zA-Z0-9]/-/g' |  tr '[:upper:]' '[:lower:]')
-  wget $SOURCEIMAGE1 -O app/media/images/products/$image
-  convert app/media/images/products/$image -resize "255x170^" -gravity center -crop 255x170+0+0 +repage -quality 80 app/media/generated/thumbs/products/$image
+  wget $SOURCEIMAGE1 -O app/media/images/departments/$image
+  convert app/media/images/departments/$image -resize "255x170^" -gravity center -crop 255x170+0+0 +repage -quality 80 app/media/generated/thumbs/departments/$image
   echo "---" > $DESTFILE
   echo "code : $code" >> $DESTFILE
   echo "layout: department" >> $DESTFILE
-  echo "permalink : $PERMALINK.html" >> $DESTFILE
-  echo "category: $code" >> $DESTFILE
+  echo "permalink : $PERMALINK" >> $DESTFILE
+  echo "department: $code" >> $DESTFILE
   echo "title: $department " >> $DESTFILE
   echo "image: $image" >> $DESTFILE
   echo "description: $desc" >> $DESTFILE
@@ -114,8 +116,8 @@ do
   PERMALINK=$(echo $code | sed 's/[^a-zA-Z0-9]/-/g' |  tr '[:upper:]' '[:lower:]')
   echo "---" > $DESTFILE
   echo "code : $code" >> $DESTFILE
-  echo "layout: department" >> $DESTFILE
-  echo "permalink : $PERMALINK" >> $DESTFILE
+  echo "layout: category" >> $DESTFILE
+  echo "permalink : $department/$PERMALINK" >> $DESTFILE
   echo "department: $department" >> $DESTFILE
   echo "title: $title" >> $DESTFILE
   echo "description: $desc" >> $DESTFILE
@@ -135,8 +137,8 @@ do
   PERMALINK=$(echo $code | sed 's/[^a-zA-Z0-9]/-/g' |  tr '[:upper:]' '[:lower:]')
   echo "---" > $DESTFILE
   echo "code : $code" >> $DESTFILE
-  echo "layout: department" >> $DESTFILE
-  echo "permalink : $PERMALINK" >> $DESTFILE
+  echo "layout: subcategory" >> $DESTFILE
+  echo "permalink : $category/$PERMALINK" >> $DESTFILE
   echo "category: $category" >> $DESTFILE
   echo "title: $title" >> $DESTFILE
   echo "description: $desc" >> $DESTFILE

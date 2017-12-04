@@ -1,0 +1,39 @@
+---
+layout: default
+---
+    <section class="container">
+      <div class="jumbotron-wrapper" style="background-image: url('/images/categories/{{ page.image }}')";>
+      <div class="jumbotron">
+        <h1>{{ page.title }}</h1>
+        <p>{{ page.description}}</p>
+      </div>
+      </div>
+    </section>
+
+    <section class="container related">
+      {% for range in site.data.ranges %}
+        {% if range.department == page.department %}
+          <div class="col-xs-6 col-md-3">
+             {% assign rangePermalink = range.code | downcase | replace:' ','-' %}
+              <a href="/{{ range.department }}/{{ rangePermalink }}.html" class="thumbnail">
+                <img class="img-responsive" src="/media/generated/thumbs/ranges/{{ range.image }}">
+                <p class="item-label">{{ range.range | capitalize }}</p>
+              </a>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </section>
+
+    <section class="container categories">
+			<p><strong> Browse by category </strong></p>
+      {% for category in site.data.categories %}
+        {% if category.department == page.department %}
+          <div class="col-xs-6 col-md-3">
+             {% assign categoryPermalink = category.code | downcase | replace:' ','-' %}
+              <a href="/{{ category.department }}/{{ categoryPermalink }}" class="thumbnail">
+                <p class="item-label">{{ category.title | capitalize }}</p>
+              </a>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </section>

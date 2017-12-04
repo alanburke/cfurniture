@@ -5,8 +5,8 @@ layout: default
 {% for range in site.data.ranges %}
   {% if range.code == page.range %}
     {% assign rangeName = range.range %}
-    {% assign rangeCategory = range.category %}
-    {% assign rangePermalink = range.range | downcase | replace:' ','-' %}
+    {% assign rangeDept = range.department %}
+    {% assign rangePermalink = range.code | downcase | replace:' ','-' %}
   {% endif %}
 {% endfor %}
 
@@ -15,8 +15,8 @@ layout: default
       <div class="col-md-12">
         <ol class="breadcrumb">
           <li><a href="/">Home</a></li>
-          <li><a href="/{{ rangeCategory }}">{{ rangeCategory }}</a></li>
-          <li><a href="/{{ rangeCategory }}/{{ rangePermalink }}.html">{{ rangeName }}</a></li>
+          <li><a href="/{{ rangeDept }}">{{ rangeDept }}</a></li>
+          <li><a href="/{{ rangeDept }}/{{ rangePermalink }}.html">{{ rangeName }}</a></li>
           <li class="active">{{ page.name }}</li>
         </ol>
       </div>
@@ -76,7 +76,7 @@ layout: default
         {% for product in site.data.products %}
           {% if product.range == page.range %}
           <div class="col-xs-6 col-md-3">
-              {% assign prodPermalink = product.name | downcase | replace:"'","-" | replace:'"','-' | replace:'+','-' | replace:'(','-' | replace:')','-' | replace:'.','-' |  replace:' ','-' %}
+              {% assign prodPermalink = product.code | downcase | replace:"'","-" | replace:'"','-' | replace:'+','-' | replace:'(','-' | replace:')','-' | replace:'.','-' |  replace:' ','-' %}
               <a href="/product/{{ prodPermalink }}.html" class="thumbnail">
                 <img class="img-responsive" src="/media/generated/thumbs/products/{{ product.image }}">
                 <p class="item-label">{{ product.name | capitalize }}</p>
@@ -85,5 +85,21 @@ layout: default
           {% endif %}
         {% endfor %}
       </div>
+
+      <h4>Similar Items</h4>
+      <div class="row related-items">
+        {% for product in site.data.products %}
+          {% if product.subcategory == page.subcategory and product.code != page.code  %}
+          <div class="col-xs-6 col-md-3">
+              {% assign prodPermalink = product.code | downcase | replace:"'","-" | replace:'"','-' | replace:'+','-' | replace:'(','-' | replace:')','-' | replace:'.','-' |  replace:' ','-' %}
+              <a href="/product/{{ prodPermalink }}.html" class="thumbnail">
+                <img class="img-responsive" src="/media/generated/thumbs/products/{{ product.image }}">
+                <p class="item-label">{{ product.name | capitalize }}</p>
+              </a>
+          </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
 </div>
 <link href="/css/colorbox.css" rel="stylesheet" type="text/css" />
