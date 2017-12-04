@@ -138,7 +138,7 @@ do
   echo "---" > $DESTFILE
   echo "code : $code" >> $DESTFILE
   echo "layout: subcategory" >> $DESTFILE
-  echo "permalink : $category/$PERMALINK" >> $DESTFILE
+  echo "permalink : sub/$category/$PERMALINK" >> $DESTFILE
   echo "category: $category" >> $DESTFILE
   echo "title: $title" >> $DESTFILE
   echo "description: $desc" >> $DESTFILE
