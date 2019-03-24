@@ -1,35 +1,19 @@
 version: 2
 jobs:
   build:
-    machine: true
-
-machine:
-  ruby:
-      version: 2.2.5
-  node:
-      version: 8.5.0
-  pre:
-    - npm install -g casperjs@1.1.0-beta3
-    - sudo pip install csvkit --allow-external csvkit --allow-unverified csvkit
-    - sudo apt-get update
-    - sudo apt-get install libfftw3-double3 libmagickcore5 imagemagick
-
-general:
-  branches:
-    only:
-    - master
-
-dependencies:
-  post:
-    - npm run generate
-    - npm run build
-
-test:
-  override:
-    - casperjs test ./tests/phantom_tests.js
-
-deployment:
-  production:
-    branch: master
-    commands:
-      - bundle exec s3_website push
+    docker:
+      - image: circleci/ruby:2.2.7-node
+    working_directory: ~/repo
+    environment:
+    steps:
+      - run: sudo apt-get update -y; sudo apt-get install --assume-yes openjdk-7-jre
+      - run: sudo pip install csvkit --allow-external csvkit --allow-unverified csvkit
+      - run: sudo apt-get install libfftw3-double3 libmagickcore5 imagemagick
+      - checkout
+      - run: bundle install
+      - run: npm install
+      - run: npm run generate
+      - run: npm run build
+      - deploy:
+          name: deploy to AWS
+          command: s3_website push
