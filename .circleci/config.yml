@@ -10,6 +10,7 @@ jobs:
       - run: sudo apt-get install python-dev python-pip python-setuptools build-essential
       - run: sudo pip install --upgrade setuptools
       - run: sudo pip install csvkit --allow-external csvkit --allow-unverified csvkit
+      - run: sudo pip install --upgrade csvkit
       - run: sudo apt-get install libfftw3-double3 imagemagick
       - checkout
       - run: bundle install
