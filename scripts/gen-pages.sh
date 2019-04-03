@@ -89,7 +89,7 @@ do
   DESTFILE=app/_posts/departments/0001-01-01-$code.md
   SOURCEPATH=https://s3-eu-west-1.amazonaws.com/raw.cfurniture.ie/www.cfurniture.ie/images
   SOURCEIMAGE1=$SOURCEPATH/$image
-  PERMALINK=$(echo $code | sed 's/[^a-zA-Z0-9]/-/g' |  tr '[:upper:]' '[:lower:]')
+  PERMALINK=$(echo $code | sed 's/[^a-zA-Z0-9]/-/g' |  tr '[:upper:]' '[:lower:]')/
   wget $SOURCEIMAGE1 -O app/media/images/departments/$image
   convert app/media/images/departments/$image -resize "255x170^" -gravity center -crop 255x170+0+0 +repage -quality 80 app/media/generated/thumbs/departments/$image
   echo "---" > $DESTFILE
@@ -113,7 +113,7 @@ IFS="|"
 while read code department title desc image
 do
   DESTFILE=app/_posts/categories/0001-01-01-$code.md
-  PERMALINK=$(echo $code | sed 's/[^a-zA-Z0-9]/-/g' |  tr '[:upper:]' '[:lower:]')
+  PERMALINK=$(echo $code | sed 's/[^a-zA-Z0-9]/-/g' |  tr '[:upper:]' '[:lower:]')/
   echo "---" > $DESTFILE
   echo "code : $code" >> $DESTFILE
   echo "layout: category" >> $DESTFILE
@@ -134,7 +134,7 @@ IFS="|"
 while read code category title desc image
 do
   DESTFILE=app/_posts/subcategories/0001-01-01-$code.md
-  PERMALINK=$(echo $code | sed 's/[^a-zA-Z0-9]/-/g' |  tr '[:upper:]' '[:lower:]')
+  PERMALINK=$(echo $code | sed 's/[^a-zA-Z0-9]/-/g' |  tr '[:upper:]' '[:lower:]')/
   echo "---" > $DESTFILE
   echo "code : $code" >> $DESTFILE
   echo "layout: subcategory" >> $DESTFILE

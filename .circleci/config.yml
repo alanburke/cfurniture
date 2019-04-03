@@ -10,6 +10,7 @@ jobs:
       - run: sudo apt-get install --assume-yes openjdk-7-jre
       - run: sudo apt-get install python-pip
       - run: sudo pip install csvkit --allow-external csvkit --allow-unverified csvkit
+      - run: sudo pip install --upgrade csvkit
       - run: sudo apt-get install libfftw3-double3 imagemagick
       - checkout
       - run: bundle install
