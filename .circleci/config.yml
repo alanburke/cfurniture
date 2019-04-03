@@ -6,7 +6,8 @@ jobs:
     working_directory: ~/repo
     environment:
     steps:
-      - run: sudo apt-get update -y; sudo apt-get install --assume-yes openjdk-7-jre
+      - run: sudo apt-get update -y
+      - run: sudo apt-get install --assume-yes openjdk-7-jre
       - run: sudo apt-get install python-pip
       - run: sudo pip install csvkit --allow-external csvkit --allow-unverified csvkit
       - run: sudo apt-get install libfftw3-double3 imagemagick
