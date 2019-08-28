@@ -10,20 +10,6 @@ layout: default
       </div>
     </section>
 
-    <section class="container related">
-      {% for range in site.data.ranges %}
-        {% if range.department == page.department %}
-          <div class="col-xs-6 col-md-3">
-             {% assign rangePermalink = range.code | downcase | replace:' ','-' %}
-              <a href="/{{ range.department }}/{{ rangePermalink }}.html" class="thumbnail">
-                <img class="img-responsive" src="/media/generated/thumbs/ranges/{{ range.image }}">
-                <p class="item-label">{{ range.range | capitalize }}</p>
-              </a>
-          </div>
-        {% endif %}
-      {% endfor %}
-    </section>
-
     <section class="container categories">
 			<p><strong> Browse by category </strong></p>
       {% for category in site.data.categories %}
@@ -32,6 +18,20 @@ layout: default
              {% assign categoryPermalink = category.code | downcase | replace:' ','-' %}
               <a href="/{{ category.department }}/{{ categoryPermalink }}" class="thumbnail">
                 <p class="item-label">{{ category.title | capitalize }}</p>
+              </a>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </section>
+
+    <section class="container related">
+      {% for range in site.data.ranges %}
+        {% if range.department == page.department %}
+          <div class="col-xs-12 col-md-6">
+             {% assign rangePermalink = range.code | downcase | replace:' ','-' %}
+              <a href="/{{ range.department }}/{{ rangePermalink }}.html" class="thumbnail">
+                <img class="img-responsive" src="/media/generated/thumbs/ranges/{{ range.image }}">
+                <p class="item-label">{{ range.range | capitalize }}</p>
               </a>
           </div>
         {% endif %}

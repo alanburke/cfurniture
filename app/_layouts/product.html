@@ -75,7 +75,7 @@ layout: default
       <div class="row related-items">
         {% for product in site.data.products %}
           {% if product.range == page.range %}
-          <div class="col-xs-6 col-md-3">
+          <div class="col-xs-12 col-md-6">
               {% assign prodPermalink = product.code | downcase | replace:"'","-" | replace:'"','-' | replace:'+','-' | replace:'(','-' | replace:')','-' | replace:'.','-' |  replace:' ','-' %}
               <a href="/product/{{ prodPermalink }}.html" class="thumbnail">
                 <img class="img-responsive" src="/media/generated/thumbs/products/{{ product.image }}">
@@ -90,7 +90,7 @@ layout: default
       <div class="row related-items">
         {% for product in site.data.products %}
           {% if product.subcategory == page.subcategory and product.code != page.code  %}
-          <div class="col-xs-6 col-md-3">
+          <div class="col-xs-12 col-md-6">
               {% assign prodPermalink = product.code | downcase | replace:"'","-" | replace:'"','-' | replace:'+','-' | replace:'(','-' | replace:')','-' | replace:'.','-' |  replace:' ','-' %}
               <a href="/product/{{ prodPermalink }}.html" class="thumbnail">
                 <img class="img-responsive" src="/media/generated/thumbs/products/{{ product.image }}">
