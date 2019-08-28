@@ -32,6 +32,9 @@ p.price-info {
 }
 .thumbnail {
   position: relative;
+        background: none;
+        border: none;
+        box-shadow: none;
 }
 .thumbnail p.item-tagline {
   text-align: center;
