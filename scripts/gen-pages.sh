@@ -13,7 +13,7 @@ do
   PERMALINK=$(echo $code | sed 's/[^a-zA-Z0-9]/-/g' |  tr '[:upper:]' '[:lower:]')
   SOURCEIMAGE=https://s3-eu-west-1.amazonaws.com/raw.cfurniture.ie/www.cfurniture.ie/images/$image
   wget $SOURCEIMAGE -O app/media/images/ranges/$image
-  convert app/media/images/ranges/$image -resize "255x170^" -gravity center -crop 255x170+0+0 +repage -quality 80 app/media/generated/thumbs/ranges/$image
+  convert app/media/images/ranges/$image -resize "495x330^" -gravity center -crop 495x330+0+0 +repage -quality 80 app/media/generated/thumbs/ranges/$image
   SOURCESPECSHEET=https://s3-eu-west-1.amazonaws.com/raw.cfurniture.ie/www.cfurniture.ie/pdfs/$specsheet
   wget $SOURCESPECSHEET -O app/media/specsheets/$specsheet
   echo "---" > $DESTFILE
@@ -47,11 +47,11 @@ do
   SOURCEIMAGE3=$SOURCEPATH/$image3
   PERMALINK=$(echo $code | sed 's/[^a-zA-Z0-9]/-/g' |  tr '[:upper:]' '[:lower:]')
   wget $SOURCEIMAGE1 -O app/media/images/products/$image
-  convert app/media/images/products/$image -resize "255x170^" -gravity center -crop 255x170+0+0 +repage -quality 80 app/media/generated/thumbs/products/$image
+  convert app/media/images/products/$image -resize "495x330^" -gravity center -crop 495x330+0+0 +repage -quality 80 app/media/generated/thumbs/products/$image
   wget $SOURCEIMAGE2 -O app/media/images/products/$image2
-  convert app/media/images/products/$image2 -resize "255x170^" -gravity center -crop 255x170+0+0 +repage -quality 80 app/media/generated/thumbs/products/$image2
+  convert app/media/images/products/$image2 -resize "495x330^" -gravity center -crop 495x330+0+0 +repage -quality 80 app/media/generated/thumbs/products/$image2
   wget $SOURCEIMAGE3 -O app/media/images/products/$image3
-  convert app/media/images/products/$image3 -resize "255x170^" -gravity center -crop 255x170+0+0 +repage -quality 80 app/media/generated/thumbs/products/$image3
+  convert app/media/images/products/$image3 -resize "495x330^" -gravity center -crop 495x330+0+0 +repage -quality 80 app/media/generated/thumbs/products/$image3
   echo "---" > $DESTFILE
   echo "layout: product" >> $DESTFILE
   echo "code : $code" >> $DESTFILE
@@ -91,7 +91,7 @@ do
   SOURCEIMAGE1=$SOURCEPATH/$image
   PERMALINK=$(echo $code | sed 's/[^a-zA-Z0-9]/-/g' |  tr '[:upper:]' '[:lower:]')/
   wget $SOURCEIMAGE1 -O app/media/images/departments/$image
-  convert app/media/images/departments/$image -resize "255x170^" -gravity center -crop 255x170+0+0 +repage -quality 80 app/media/generated/thumbs/departments/$image
+  convert app/media/images/departments/$image -resize "495x330^" -gravity center -crop 495x330+0+0 +repage -quality 80 app/media/generated/thumbs/departments/$image
   echo "---" > $DESTFILE
   echo "code : $code" >> $DESTFILE
   echo "layout: department" >> $DESTFILE
