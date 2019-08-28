@@ -13,22 +13,22 @@ wget https://s3-eu-west-1.amazonaws.com/raw.cfurniture.ie/www.cfurniture.ie/imag
 # Get Flooring and Matress images
 image='flooring.jpg'
 wget https://s3-eu-west-1.amazonaws.com/raw.cfurniture.ie/www.cfurniture.ie/images/flooring.jpg -O app/media/images/products/flooring.jpg
-convert app/media/images/products/$image -resize "255x170^" -gravity center -crop 255x170+0+0 +repage -quality 80 app/media/generated/thumbs/products/$image
+convert app/media/images/products/$image -resize "495x330^" -gravity center -crop 495x330+0+0 +repage -quality 80 app/media/generated/thumbs/products/$image
 image='flooring1.jpg'
 wget https://s3-eu-west-1.amazonaws.com/raw.cfurniture.ie/www.cfurniture.ie/images/flooring1.jpg -O app/media/images/products/flooring1.jpg
-convert app/media/images/products/$image -resize "255x170^" -gravity center -crop 255x170+0+0 +repage -quality 80 app/media/generated/thumbs/products/$image
+convert app/media/images/products/$image -resize "495x330^" -gravity center -crop 495x330+0+0 +repage -quality 80 app/media/generated/thumbs/products/$image
 image='flooring2.jpg'
 wget https://s3-eu-west-1.amazonaws.com/raw.cfurniture.ie/www.cfurniture.ie/images/flooring2.jpg -O app/media/images/products/flooring2.jpg
-convert app/media/images/products/$image -resize "255x170^" -gravity center -crop 255x170+0+0 +repage -quality 80 app/media/generated/thumbs/products/$image
+convert app/media/images/products/$image -resize "495x330^" -gravity center -crop 495x330+0+0 +repage -quality 80 app/media/generated/thumbs/products/$image
 image='matts.jpg'
 wget https://s3-eu-west-1.amazonaws.com/raw.cfurniture.ie/www.cfurniture.ie/images/matts.jpg -O app/media/images/products/matts.jpg
-convert app/media/images/products/$image -resize "255x170^" -gravity center -crop 255x170+0+0 +repage -quality 80 app/media/generated/thumbs/products/$image
+convert app/media/images/products/$image -resize "495x330^" -gravity center -crop 495x330+0+0 +repage -quality 80 app/media/generated/thumbs/products/$image
 image='matts1.jpg'
 wget https://s3-eu-west-1.amazonaws.com/raw.cfurniture.ie/www.cfurniture.ie/images/matts1.jpg -O app/media/images/products/matts1.jpg
-convert app/media/images/products/$image -resize "255x170^" -gravity center -crop 255x170+0+0 +repage -quality 80 app/media/generated/thumbs/products/$image
+convert app/media/images/products/$image -resize "495x330^" -gravity center -crop 495x330+0+0 +repage -quality 80 app/media/generated/thumbs/products/$image
 image='matts2.jpg'
 wget https://s3-eu-west-1.amazonaws.com/raw.cfurniture.ie/www.cfurniture.ie/images/matts2.jpg -O app/media/images/products/matts2.jpg
-convert app/media/images/products/$image -resize "255x170^" -gravity center -crop 255x170+0+0 +repage -quality 80 app/media/generated/thumbs/products/$image
+convert app/media/images/products/$image -resize "495x330^" -gravity center -crop 495x330+0+0 +repage -quality 80 app/media/generated/thumbs/products/$image
 
 
 in2csv --sheet ranges $RAW/details.xls > $RAW/ranges-commas.csv
