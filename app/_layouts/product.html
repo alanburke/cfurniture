@@ -54,17 +54,18 @@ layout: default
         {% if page.tagline %} <p class="tagline"> {{ page.tagline }} </p>  {% endif %}
         {% if page.pricingNote %} <p class="pricingNote well well-sm"> {{ page.pricingNote }} </p> {% endif %}
 
-        {% if page.displayRRP  == 'Y' %}
-          {% if page.displayUnit  == 'Y' %} <strike>{% endif %}
+        <h1>{{ page.displayRRP }} </h1>
+        {% if page.displayRRP  == 'x' %}
+          {% if page.displayUnit  == 'x' %} <strike>{% endif %}
           <p class="bg-info  price-info price-rrp"> RRP: € {{ page.RRP}} </p>
-          {% if page.displayUnit  == 'Y' %} </strike>{% endif %}
+          {% if page.displayUnit  == 'x' %} </strike>{% endif %}
         {% endif %}
-        {% if page.displayUnit  == 'Y' %}
-          {% if page.displaySale  == 'Y' %} <strike>{% endif %}
+        {% if page.displayUnit  == 'x' %}
+          {% if page.displaySale  == 'x' %} <strike>{% endif %}
           <p class="bg-primary price-info price-unit"> Our Price: € {{ page.Unit}} </p>
-          {% if page.displaySale  == 'Y' %} </strike>{% endif %}
+          {% if page.displaySale  == 'x' %} </strike>{% endif %}
         {% endif %}
-        {% if page.displaySale  == 'Y' %}
+        {% if page.displaySale  == 'x' %}
           <p class="bg-danger text-muted lead price-info price-sale"> Sale price: <span class="glyphicon glyphicon-eur" aria-hidden="true"></span> {{ page.Sale}} </p>
         {% endif %}
         {{ content }}

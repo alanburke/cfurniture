@@ -12,7 +12,7 @@ layout: default
 
     <section class="container related">
         {% for product in site.data.products %}
-        {% if product.Special == 'Y' %}
+        {% if product.Special == 'x' %}
           <div class="col-xs-6 col-md-3">
               {% assign prodPermalink = product.name | downcase | replace:"'","-" | replace:'"','-' | replace:'+','-' | replace:'(','-' | replace:')','-' | replace:'.','-' |  replace:' ','-' %}
               <a href="/product/{{ prodPermalink }}.html" class="thumbnail">
