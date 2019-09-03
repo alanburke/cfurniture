@@ -54,7 +54,6 @@ layout: default
         {% if page.tagline %} <p class="tagline"> {{ page.tagline }} </p>  {% endif %}
         {% if page.pricingNote %} <p class="pricingNote well well-sm"> {{ page.pricingNote }} </p> {% endif %}
 
-        <h1>{{ page.displayRRP }} </h1>
         {% if page.displayRRP  == 'x' %}
           {% if page.displayUnit  == 'x' %} <strike>{% endif %}
           <p class="bg-info  price-info price-rrp"> RRP: € {{ page.RRP}} </p>
