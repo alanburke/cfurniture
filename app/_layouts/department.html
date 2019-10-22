@@ -14,7 +14,7 @@ layout: default
 			<p><strong> Browse by category </strong></p>
       {% for category in site.data.categories %}
         {% if category.department == page.department %}
-          <div class="col-xs-6 col-md-3">
+          <div class="col-xs-12 col-md-6">
              {% assign categoryPermalink = category.code | downcase | replace:' ','-' %}
               <a href="/{{ category.department }}/{{ categoryPermalink }}" class="thumbnail">
                 <p class="item-label">{{ category.title | capitalize }}</p>

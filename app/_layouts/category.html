@@ -13,7 +13,7 @@ layout: default
     <section class="container related">
       {% for product in site.data.products %}
         {% if product.category == page.code %}
-          <div class="col-xs-6 col-md-3">
+          <div class="col-xs-12 col-md-6">
              {% assign productPermalink = product.code | downcase | replace:' ','-' %}
               <a href="/product/{{ productPermalink }}.html" class="thumbnail">
                 <img class="img-responsive" src="/media/generated/thumbs/products/{{ product.image }}">
